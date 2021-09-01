@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>tkinter美化 | sunshinehyc&#39;s blog</title>
+<title>【测速工具】前两个文章的代码 | sunshinehyc&#39;s blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,13 @@
 
 
 
-    <meta name="description" content="大家都知道python自带一个GUI库--tkinter，但是它一直为人们所诟病的是，它太丑了！
-在这个审美看脸的时代，tkinter这么丑，就被隔壁pyqt5,wxpython甩下去了
-但是，现在tkinter有美化的方法了！
-打开这个链..." />
+    <meta name="description" content="没写注释，对不起！🤕
+凑合着看把！
+
+from tkinter.constants import COMMAND
+import speedtest
+import tkinter as tk
+from tkinter.ttk import ..." />
     <meta name="keywords" content="python" />
   </head>
   <body>
@@ -101,26 +104,87 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">tkinter美化</h2>
+            <h2 class="post-title">【测速工具】前两个文章的代码</h2>
             <div class="post-date">2021-09-01</div>
             
-              <div class="feature-container" style="background-image: url('https://sunshinehyc.github.io/post-images/tkinter-mei-hua.png')">
+              <div class="feature-container" style="background-image: url('https://sunshinehyc.github.io/post-images/ce-su-gong-ju-qian-liang-ge-wen-zhang-de-dai-ma.png')">
               </div>
             
             <div class="post-content" v-pre>
-              <p>大家都知道python自带一个GUI库--tkinter，但是它一直为人们所诟病的是，它太丑了！<br>
-在这个审美看脸的时代，tkinter这么丑，就被隔壁pyqt5,wxpython甩下去了<br>
-但是，现在tkinter有美化的方法了！<br>
-打开这个链接-&gt;https://github.com/TkinterEP/ttkthemes<br>
-下载ttkthemes这个文件夹<br>
-开头加上：<br>
-from tkinter.ttk import *<br>
-from ttkthemes import *<br>
-创建窗口用：<br>
-window = ThemedTk(theme='adapta', toplevel=True, themebg=True)<br>
-这里的theme可以改成项目里的screenshots文件夹的主题（那是示例的截图）<br>
-然后大功告成！<img src="https://sunshinehyc.github.io/post-images/1630501516476.png" alt="" loading="lazy"><br>
-是不是比以前好看了？</p>
+              <p>没写注释，对不起！🤕<br>
+凑合着看把！<br>
+<img src="https://sunshinehyc.github.io/post-images/1630503036276.png" alt="" loading="lazy"></p>
+<pre><code>from tkinter.constants import COMMAND
+import speedtest
+import tkinter as tk
+from tkinter.ttk import *
+from ttkthemes import *
+from threading import Thread
+import ctypes
+from tkinter import messagebox
+
+
+def speed_now():
+    speed = speedtest.Speedtest()
+    speed.get_servers()
+    dl = speed.download()
+    ul = speed.upload()
+    dl = f&quot;下载速度:{dl/1024/1024:.2f}MB&quot;
+    ul = f&quot;上传速度:{ul/1024/1021:.2f}MB&quot;
+    result = {&quot;dl&quot;: dl, &quot;ul&quot;: ul}
+    return result
+
+
+window = ThemedTk(theme='adapta', toplevel=True, themebg=True)
+ctypes.windll.shcore.SetProcessDpiAwareness(1)
+ScaleFactor = ctypes.windll.shcore.GetScaleFactorForDevice(0)
+window.tk.call('tk', 'scaling', ScaleFactor/75)
+window.title(&quot;网络测速&quot;)
+window.geometry(&quot;400x300&quot;)
+
+grop = Labelframe(window).pack()
+l1 = Label(master=window, text='测速工具', font=('楷体', 20))
+l1.pack(padx=1, pady=2)
+l2 = Label(grop, text='下载速度:__MB', font=('楷体', 15))
+l3 = Label(grop, text='上传速度:__MB', font=('楷体', 15))
+l2.pack()
+l3.pack()
+
+
+def task():
+    result = speed_now()
+    l2.config(text=result.get('dl'))
+    l3.config(text=result.get('ul'))
+
+
+def test():
+    def show_prog():
+        top = tk.Toplevel()
+        top.attributes(&quot;-toolwindow&quot;, 1)
+        top.wm_attributes(&quot;-topmost&quot;, 1)
+        top.title(&quot;进度条&quot;)
+        Label(top, text=&quot;正在查询，时间有点长，请稍等片刻&quot;, font=('楷体', 18)).pack()
+        prog = Progressbar(top, mode=&quot;indeterminate&quot;, maximum=10, length=200)
+        prog.pack()
+        prog.start()
+        task()
+        prog.stop()
+        top.destroy()
+        msg = messagebox.showinfo(title='注意', message='查询成功！')
+    t = Thread(target=show_prog)
+    t.start()
+
+
+b1 = Button(window, text='开始', command=test).pack()
+l4 = Label(window, text='作者:sunshinehyc')
+l5 = Label(window, text='联系:sunshine_hyc@outlook.com')
+l4.pack()
+l5.pack()
+
+
+window.mainloop()
+
+</code></pre>
 
             </div>
             
@@ -135,9 +199,9 @@ window = ThemedTk(theme='adapta', toplevel=True, themebg=True)<br>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://sunshinehyc.github.io/post/guan-yu/">
+                <a href="https://sunshinehyc.github.io/post/tkinter-pei-zhi-gao-fen-bian-lu-dian-nao/">
                   <h3 class="post-title">
-                    关于
+                    tkinter配置高分辨率电脑
                   </h3>
                 </a>
               </div>

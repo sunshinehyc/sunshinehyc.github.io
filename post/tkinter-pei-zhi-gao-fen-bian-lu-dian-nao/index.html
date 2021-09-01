@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Gridea | sunshinehyc&#39;s blog</title>
+<title>tkinter配置高分辨率电脑 | sunshinehyc&#39;s blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,12 @@
 
 
 
-    <meta name="description" content="每天进步一点点">
+    <meta name="description" content="有一些同学的电脑分辨率有点高（羡慕了）
+但是高分辨率在用tkinter的时候就会出现模糊不清的现象
+在代码前面加上代码
+import ctypes
+ctypes.windll.shcore.SetProcessDpiAwareness(1)..." />
+    <meta name="keywords" content="python" />
   </head>
   <body>
     <div id="app" class="main">
@@ -96,33 +101,46 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: Gridea</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://sunshinehyc.github.io/post/guan-yu/">
-                  <h2 class="post-title">关于</h2>
-                </a>
-                <div class="post-date">
-                  2021-07-31
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://sunshinehyc.github.io/post/guan-yu/">
-                  <div class="feature-container" style="background-image: url('https://sunshinehyc.github.io/post-images/guan-yu.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">tkinter配置高分辨率电脑</h2>
+            <div class="post-date">2021-09-01</div>
+            
+            <div class="post-content" v-pre>
+              <p>有一些同学的电脑分辨率有点高（羡慕了）<br>
+但是高分辨率在用tkinter的时候就会出现模糊不清的现象<br>
+在代码前面加上代码</p>
+<pre><code>import ctypes
+ctypes.windll.shcore.SetProcessDpiAwareness(1)
+ScaleFactor = ctypes.windll.shcore.GetScaleFactorForDevice(0)
+window.tk.call('tk', 'scaling', ScaleFactor/75)
+</code></pre>
+<p>具体原理我也不清楚。正在钻研。<br>
+运行的时候可能会报错，安装它报错的库即可，好像是pil</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://sunshinehyc.github.io/tag/5ZrMOioni/" class="tag">
+                    python
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://sunshinehyc.github.io/post/tkinter-mei-hua/">
+                  <h3 class="post-title">
+                    tkinter美化
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>
