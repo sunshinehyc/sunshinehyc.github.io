@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | sunshinehyc&#39;s blog</title>
+<title>tkinter美化 | sunshinehyc&#39;s blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,11 @@
 
 
 
-    <meta name="description" content="每天进步一点点">
+    <meta name="description" content="大家都知道python自带一个GUI库--tkinter，但是它一直为人们所诟病的是，它太丑了！
+在这个审美看脸的时代，tkinter这么丑，就被隔壁pyqt5,wxpython甩下去了
+但是，现在tkinter有美化的方法了！
+打开这个链..." />
+    <meta name="keywords" content="python" />
   </head>
   <body>
     <div id="app" class="main">
@@ -96,40 +100,52 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">tkinter美化</h2>
+            <div class="post-date">2021-09-01</div>
+            
+              <div class="feature-container" style="background-image: url('https://sunshinehyc.github.io/post-images/tkinter-mei-hua.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>大家都知道python自带一个GUI库--tkinter，但是它一直为人们所诟病的是，它太丑了！<br>
+在这个审美看脸的时代，tkinter这么丑，就被隔壁pyqt5,wxpython甩下去了<br>
+但是，现在tkinter有美化的方法了！<br>
+打开这个链接-&gt;https://github.com/TkinterEP/ttkthemes<br>
+下载ttkthemes这个文件夹<br>
+开头加上：<br>
+from tkinter.ttk import *<br>
+from ttkthemes import *<br>
+创建窗口用：<br>
+window = ThemedTk(theme='adapta', toplevel=True, themebg=True)<br>
+这里的theme可以改成项目里的screenshots文件夹的主题（那是示例的截图）<br>
+然后大功告成！<img src="https://sunshinehyc.github.io/post-images/1630501516476.png" alt="" loading="lazy"><br>
+是不是比以前好看了？</p>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2021</h2>
-              
+              <div class="tag-container">
                 
-                  <article class="post">
-                    <a href="https://sunshinehyc.github.io/post/tkinter-mei-hua/">
-                      <h2 class="post-title">
-                        tkinter美化
-                      </h2>
-                    </a>
-                  </article>
+                  <a href="https://sunshinehyc.github.io/tag/5ZrMOioni/" class="tag">
+                    python
+                  </a>
                 
-              
-                
-                  <article class="post">
-                    <a href="https://sunshinehyc.github.io/post/guan-yu/">
-                      <h2 class="post-title">
-                        关于
-                      </h2>
-                    </a>
-                  </article>
-                
-              
+              </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://sunshinehyc.github.io/post/guan-yu/">
+                  <h3 class="post-title">
+                    关于
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>
