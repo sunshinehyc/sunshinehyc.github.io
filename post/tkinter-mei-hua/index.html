@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://sunshinehyc.github.io/favicon.ico?v=1630503064125">
+<link rel="shortcut icon" href="https://sunshinehyc.github.io/favicon.ico?v=1630503413569">
 <link rel="stylesheet" href="https://sunshinehyc.github.io/styles/main.css">
 
 
@@ -31,7 +31,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://sunshinehyc.github.io">
-        <img src="https://sunshinehyc.github.io/images/avatar.png?v=1630503064125" class="site-logo">
+        <img src="https://sunshinehyc.github.io/images/avatar.png?v=1630503413569" class="site-logo">
         <h1 class="site-title">sunshinehyc&#39;s blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -113,11 +113,12 @@
 但是，现在tkinter有美化的方法了！<br>
 打开这个链接-&gt;https://github.com/TkinterEP/ttkthemes<br>
 下载ttkthemes这个文件夹<br>
-开头加上：<br>
-from tkinter.ttk import *<br>
-from ttkthemes import *<br>
-创建窗口用：<br>
-window = ThemedTk(theme='adapta', toplevel=True, themebg=True)<br>
+开头加上：</p>
+<pre><code>from tkinter.ttk import *
+from ttkthemes import *
+</code></pre>
+<p>创建窗口用：<br>
+<code>window = ThemedTk(theme='adapta', toplevel=True, themebg=True)</code><br>
 这里的theme可以改成项目里的screenshots文件夹的主题（那是示例的截图）<br>
 然后大功告成！<img src="https://sunshinehyc.github.io/post-images/1630501516476.png" alt="" loading="lazy"><br>
 是不是比以前好看了？</p>
