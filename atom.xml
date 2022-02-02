@@ -2,14 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sunshinehyc.github.io</id>
     <title>sunshinehyc&apos;s blog</title>
-    <updated>2021-09-01T13:38:17.537Z</updated>
+    <updated>2022-02-02T13:38:50.008Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sunshinehyc.github.io"/>
     <link rel="self" href="https://sunshinehyc.github.io/atom.xml"/>
     <subtitle>每天进步一点点</subtitle>
     <logo>https://sunshinehyc.github.io/images/avatar.png</logo>
     <icon>https://sunshinehyc.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, sunshinehyc&apos;s blog</rights>
+    <rights>All rights reserved 2022, sunshinehyc&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows10激活]]></title>
+        <id>https://sunshinehyc.github.io/post/windows10-ji-huo/</id>
+        <link href="https://sunshinehyc.github.io/post/windows10-ji-huo/">
+        </link>
+        <updated>2022-02-02T13:10:34.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【测速工具】前两个文章的代码]]></title>
         <id>https://sunshinehyc.github.io/post/ce-su-gong-ju-qian-liang-ge-wen-zhang-de-dai-ma/</id>
